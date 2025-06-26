@@ -3,7 +3,9 @@
   "version": "1.0.1",
   "description": "MCP server that gives Claude instant, intelligent access to your codebase using Language Server Protocol",
   "main": "dist/index.js",
-  "bin": "dist/index.js",
+  "bin": {
+    "bigparse": "dist/index.js"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsx watch src/index.ts",
@@ -45,7 +47,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/agentbrazley/BigParse.git"
+    "url": "git+https://github.com/agentbrazley/BigParse.git"
   },
   "bugs": {
     "url": "https://github.com/agentbrazley/BigParse/issues"
