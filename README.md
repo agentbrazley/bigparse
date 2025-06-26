@@ -30,12 +30,25 @@ With BigParse, Claude can:
 
 ## Installation
 
-### Prerequisites
+### Option 1: Claude Desktop Extension (Easiest) 🎉
+
+Install BigParse with one click using the Desktop Extension:
+
+1. Download `BigParse-DXT.dxt` from [releases](https://github.com/agentbrazley/BigParse/releases)
+2. Double-click the `.dxt` file
+3. Claude Desktop installs everything automatically
+4. Configure your workspace in Claude Desktop settings
+
+**Benefits**: No command line needed, integrated UI, automatic updates!
+
+### Option 2: Claude Code CLI
+
+#### Prerequisites
 
 - Node.js 16+
 - npm or yarn
 
-### Quick Start
+#### Quick Start
 
 1. Clone the repository:
 ```bash
@@ -55,7 +68,7 @@ npm run build
 
 4. Install for Claude Code:
 ```bash
-./install-for-claude.sh
+./scripts/install-for-claude.sh
 ```
 
 Or manually:
@@ -116,11 +129,18 @@ Once installed, BigParse tools are automatically available in Claude. Just ask:
 
 ### Setting the Workspace
 
+#### Desktop Extension
+Configure directly in Claude Desktop settings:
+- Open extension settings
+- Set "Workspace Path" to your project directory
+- Toggle other options as needed
+
+#### Claude Code CLI
 By default, BigParse uses the current directory. To analyze a specific project:
 
 ```bash
 # Using the helper script
-./update-workspace.sh /path/to/your/project
+./scripts/update-workspace.sh /path/to/your/project
 
 # Or with environment variable
 claude mcp remove bigparse -s local
