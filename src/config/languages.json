@@ -1,0 +1,70 @@
+{
+  "languages": {
+    "typescript": {
+      "command": "typescript-language-server",
+      "args": ["--stdio"],
+      "fileExtensions": [".ts", ".tsx", ".js", ".jsx"],
+      "installCommand": "npm install -g typescript-language-server typescript"
+    },
+    "python": {
+      "command": "pylsp",
+      "args": [],
+      "fileExtensions": [".py"],
+      "installCommand": "pip install python-lsp-server"
+    },
+    "rust": {
+      "command": "rust-analyzer",
+      "args": [],
+      "fileExtensions": [".rs"],
+      "installCommand": "rustup component add rust-analyzer"
+    },
+    "go": {
+      "command": "gopls",
+      "args": [],
+      "fileExtensions": [".go"],
+      "installCommand": "go install golang.org/x/tools/gopls@latest"
+    },
+    "java": {
+      "command": "jdtls",
+      "args": [],
+      "fileExtensions": [".java"],
+      "installCommand": "See https://github.com/eclipse/eclipse.jdt.ls"
+    },
+    "csharp": {
+      "command": "omnisharp",
+      "args": ["--languageserver"],
+      "fileExtensions": [".cs"],
+      "installCommand": "dotnet tool install -g omnisharp"
+    },
+    "cpp": {
+      "command": "clangd",
+      "args": [],
+      "fileExtensions": [".cpp", ".cc", ".cxx", ".c", ".h", ".hpp"],
+      "installCommand": "apt-get install clangd or brew install llvm"
+    },
+    "ruby": {
+      "command": "solargraph",
+      "args": ["stdio"],
+      "fileExtensions": [".rb"],
+      "installCommand": "gem install solargraph"
+    },
+    "php": {
+      "command": "intelephense",
+      "args": ["--stdio"],
+      "fileExtensions": [".php"],
+      "installCommand": "npm install -g intelephense"
+    },
+    "swift": {
+      "command": "sourcekit-lsp",
+      "args": [],
+      "fileExtensions": [".swift"],
+      "installCommand": "Included with Xcode"
+    },
+    "dart": {
+      "command": "dart",
+      "args": ["language-server", "--protocol=lsp"],
+      "fileExtensions": [".dart"],
+      "installCommand": "Install Flutter SDK from https://flutter.dev"
+    }
+  }
+}
