@@ -50,7 +50,7 @@ With BigParse, Claude can:
      "mcpServers": {
        "BigParse": {
          "command": "npx",
-         "args": ["@agentbrazley/bigparse"],
+         "args": ["bigparse"],
          "env": {
            "WORKSPACE_ROOT": "/path/to/your/projects"
          }

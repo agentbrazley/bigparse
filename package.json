@@ -1,5 +1,5 @@
 {
-  "name": "@agentbrazley/bigparse",
+  "name": "bigparse",
   "version": "1.0.1",
   "description": "MCP server that gives Claude instant, intelligent access to your codebase using Language Server Protocol",
   "main": "dist/index.js",
