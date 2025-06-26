@@ -30,19 +30,9 @@ With BigParse, Claude can:
 
 ## Installation
 
-### Option 1: Claude Desktop
+### Option 1: Claude Desktop (Auto-updating)
 
-#### Quick Install
-
-1. Clone and build BigParse:
-   ```bash
-   git clone https://github.com/agentbrazley/BigParse.git
-   cd BigParse
-   npm install
-   npm run build
-   ```
-
-2. Add to Claude Desktop config:
+1. Add to Claude Desktop config:
    ```bash
    # macOS
    open ~/Library/Application\ Support/Claude/claude_desktop_config.json
@@ -54,13 +44,13 @@ With BigParse, Claude can:
    nano ~/.config/Claude/claude_desktop_config.json
    ```
 
-3. Add BigParse to the `mcpServers` section:
+2. Add BigParse to the `mcpServers` section:
    ```json
    {
      "mcpServers": {
        "BigParse": {
-         "command": "node",
-         "args": ["/path/to/BigParse/dist/index.js"],
+         "command": "npx",
+         "args": ["@agentbrazley/bigparse"],
          "env": {
            "WORKSPACE_ROOT": "/path/to/your/projects"
          }
@@ -69,9 +59,14 @@ With BigParse, Claude can:
    }
    ```
 
-4. Replace `/path/to/BigParse` with your BigParse installation path
-5. Replace `/path/to/your/projects` with the directory you want to analyze
-6. Restart Claude Desktop
+3. Replace `/path/to/your/projects` with the directory you want to analyze
+4. Restart Claude Desktop
+
+**Benefits**: 
+- ✅ Always runs the latest version
+- ✅ No installation needed
+- ✅ No manual updates
+- ✅ Works on all platforms
 
 ### Option 2: Claude Code CLI
 
