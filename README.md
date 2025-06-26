@@ -30,16 +30,48 @@ With BigParse, Claude can:
 
 ## Installation
 
-### Option 1: Claude Desktop Extension (Easiest) 🎉
+### Option 1: Claude Desktop
 
-Install BigParse with one click using the Desktop Extension:
+#### Quick Install
 
-1. Download `BigParse-DXT.dxt` from [releases](https://github.com/agentbrazley/BigParse/releases)
-2. Double-click the `.dxt` file
-3. Claude Desktop installs everything automatically
-4. Configure your workspace in Claude Desktop settings
+1. Clone and build BigParse:
+   ```bash
+   git clone https://github.com/agentbrazley/BigParse.git
+   cd BigParse
+   npm install
+   npm run build
+   ```
 
-**Benefits**: No command line needed, integrated UI, automatic updates!
+2. Add to Claude Desktop config:
+   ```bash
+   # macOS
+   open ~/Library/Application\ Support/Claude/claude_desktop_config.json
+   
+   # Windows
+   notepad %APPDATA%\Claude\claude_desktop_config.json
+   
+   # Linux
+   nano ~/.config/Claude/claude_desktop_config.json
+   ```
+
+3. Add BigParse to the `mcpServers` section:
+   ```json
+   {
+     "mcpServers": {
+       "BigParse": {
+         "command": "node",
+         "args": ["/path/to/BigParse/dist/index.js"],
+         "env": {
+           "WORKSPACE_ROOT": "/path/to/your/projects"
+         }
+       }
+     }
+   }
+   ```
+
+4. Replace `/path/to/BigParse` with your BigParse installation path
+5. Replace `/path/to/your/projects` with the directory you want to analyze
+6. Restart Claude Desktop
 
 ### Option 2: Claude Code CLI
 
@@ -129,11 +161,24 @@ Once installed, BigParse tools are automatically available in Claude. Just ask:
 
 ### Setting the Workspace
 
-#### Desktop Extension
-Configure directly in Claude Desktop settings:
-- Open extension settings
-- Set "Workspace Path" to your project directory
-- Toggle other options as needed
+#### Claude Desktop
+To change the workspace directory, edit your Claude Desktop config file and update the `WORKSPACE_ROOT` environment variable:
+
+```json
+{
+  "mcpServers": {
+    "BigParse": {
+      "command": "node",
+      "args": ["/path/to/BigParse/dist/index.js"],
+      "env": {
+        "WORKSPACE_ROOT": "/new/project/path"
+      }
+    }
+  }
+}
+```
+
+Then restart Claude Desktop.
 
 #### Claude Code CLI
 By default, BigParse uses the current directory. To analyze a specific project:
